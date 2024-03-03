@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador y Desencriptador</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+</head>
+
+<body>
+    <header>
+        <h1 class="titulo">Encriptador y Desencriptador de Texto</h1>
+    </header>
+
+    <main>
+        
+        <div class="container">
+            <div class="input-container">
+                <textarea id="inputTexto" class="input-texto1" placeholder="Ingrese el texto"></textarea>
+                <p class="Texto-exclamacion">⚠️Solo letras minúsculas y sin acentos⚠️</p>
+            </div>
+            
+            <div class="input-container">
+                <textarea id="outputTexto" class="input-texto2" placeholder="Resultado" readonly></textarea>
+                <button onclick="copyToClipboard()" class="button-copiar">Copiar</button>
+            </div>
+        </div>
+        <div class="button-container">
+            
+            <button type="button" id="encriptarButton" onclick="encriptarTexto()" class="button-encriptar">Encriptar</button>
+            <button type="button" id="desencriptarButton" onclick="desencriptarTexto()" class="button-desencriptar">Desencriptar</button>
+            <button id="liberameButton" onclick="liberarVideo()">Liberame</button>
+        </div>
+        
+        
+          
+        
+    </main>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <p id="modal-message"></p>
+            <button onclick="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+    
+    <audio id="background-music" loop>
+        <source src="Musica/the-last-piano-112677.mp3" id="background-music" type="audio/mp3">
+    </audio>
+    <audio id="scary-music" loop>
+        <source src="Musica/scary-music-box-for-spooky-scenes-165983.mp3" type="audio/mp3">
+    </audio>
+    <audio id="interference-audio"> 
+        <source src="Musica/Interference.mp3" type="audio/mp3">
+    </audio>
+
+   
+
+    <video id="glitchVideo" src="Videos/glitch_-_27706 (1080p).mp4" muted></video>
+    <div id="floating-letters-container"></div>
+   
+    <script src="script.js"></script>
+    <footer>
+        <p class="copyright">&copy; Created by Sebastian Sosa | 2024</p>
+    </footer>
+
+    <script>
+        function ajustarZoom() {
+          var screenHeight = window.screen.height;
+          var maxScreenHeight = 1080;
+          var scale = screenHeight > maxScreenHeight ? 0.70 : screenHeight / maxScreenHeight;
+          document.body.style.zoom = scale * 100 + '%';
+        }
+        window.onload = ajustarZoom;
+      </script>
+    
+    
+</body>
+
+</html>

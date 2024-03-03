@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertencia de Seguridad</title>
+</head>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e21f19;
+    position: relative; 
+    background-image: url('Imagen/muñeco\ -\ copia.jpg'); /* Cambia la URL por tu imagen */
+    background-size: cover;
+    background-position: center;
+    
+  }
+  .container {
+    max-width: 100%;
+    margin: 180px 24%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative; 
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  h1 {
+    color: white;
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  p {
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  /* Estilo para el botón */
+
+.back-button {
+    position: absolute;
+    right: 20px;
+    padding: 20px 20px;
+    background-color: #590000b5;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 4px 4px 4px 4px;
+    top: 107%;
+    border-radius: 5px;
+}
+.back-button:hover {
+    background-color: #970000;
+}
+
+
+
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.checkbox {
+  margin-right: 10px;
+}
+
+.checkbox-message {
+  font-size: 16px;
+  color: white;
+}
+@media (max-width: 740px) {
+  .container {
+    max-width: 100%;
+    margin: 180px 17%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    top: -6em;
+  }
+}
+
+</style>
+
+<body>
+  <div class="container">
+    <img src="https://img.icons8.com/ios-filled/100/FFFFFF/error--v1.png" alt="error--v1">
+    <h1>¡Advertencia de Seguridad!</h1>
+    <p>Este sitio web ha sido bloqueado debido a un uso incorrecto. Te advertí previamente sobre esto, pero parece que no se tomó en cuenta. Si crees que esto es un error, por favor contáctame o no, para resolverlo...</p>
+    <p>De lo contrario, si deseas regresar al encriptador, por favor marca la casilla a continuación para confirmar tu decisión.</p>
+    <p> ¿Estás seguro de querer regresar?</p>
+    <div class="checkbox-container">
+      <input type="checkbox" class="checkbox" id="confirmationCheckbox">
+      <label for="confirmationCheckbox" class="checkbox-message">Si, estoy seguro y prometo usar el encriptador adecuadamente. No tocaré los botones si no hay texto.</label>
+    </div>
+    <a href="index.html"><button class="back-button" disabled>Volver a la página anterior</button></a>
+  </div>
+
+  <script>
+    // Habilitar o deshabilitar el botón según si la casilla de verificación está marcada
+    document.getElementById('confirmationCheckbox').addEventListener('change', function() {
+      document.querySelector('.back-button').disabled = !this.checked;
+    });
+  </script>
+</body>
+</html>
